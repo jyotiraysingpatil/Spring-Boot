@@ -1,0 +1,25 @@
+package com.stud.Controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.stud.Entities.Student;
+import com.stud.Services.StudentService;
+
+@RestController
+@RequestMapping("student")
+public class StudentController {
+
+	@Autowired
+	private StudentService studentService;
+	
+	@PostMapping
+    public ResponseEntity<String> addNewStudent(@RequestBody Student student) {
+        String response = studentService.addNewStudent(student);
+        return ResponseEntity.ok(response);
+    }
+}

@@ -1,0 +1,10 @@
+package com.stud.Services;
+
+import com.stud.Entities.Student;
+
+public interface StudentService {
+String addNewStudent(Student student);
+
+
+
+}

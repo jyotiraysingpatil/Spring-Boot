@@ -1,0 +1,24 @@
+package com.app.Controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.app.Entities.Vehicle;
+import com.app.Services.VehicleService;
+
+@RestController
+@RequestMapping("/vahicle")
+public class VehicleController {
+	
+
+@Autowired
+private VehicleService vehicleService;
+
+	@PostMapping("insert")
+	public Vehicle addNewVehicle(@RequestBody Vehicle vehicle) {
+		
+}
+}

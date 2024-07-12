@@ -1,0 +1,23 @@
+package com.app.Services;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.app.Entities.Medicine;
+import com.app.Repository.MedicineRepository;
+
+@Service
+@Transactional
+public class MedicineServiceImpl implements MedicineService {
+@Autowired
+private MedicineRepository medicineRepository;
+
+	@Override
+	public Medicine addNew(Medicine medicine) {
+		
+		return medicineRepository.save(medicine);
+	}
+
+}

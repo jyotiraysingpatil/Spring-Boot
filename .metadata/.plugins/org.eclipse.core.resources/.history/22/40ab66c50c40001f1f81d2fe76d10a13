@@ -1,0 +1,17 @@
+package com.app.Services;
+
+import java.util.List;
+
+import com.app.Entities.Medicine;
+
+public interface MedicineService {
+Medicine addNew(Medicine medicine);
+
+Medicine getById(Long id);
+
+Medicine update(Medicine medicine);
+
+List<Medicine> getAll();
+
+
+}

@@ -1,0 +1,5 @@
+package com.app.Enum;
+
+public class Company {
+HERO,HONDA,BAJAJ;
+}

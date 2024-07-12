@@ -1,0 +1,19 @@
+package com.stud.Controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.stud.Entities.Course;
+import com.stud.Services.CourseService;
+
+@RestController
+@RequestMapping("course")
+public class CourseController {
+@Autowired
+private CourseService courseService;
+	
+public 	Course addNewCourse(Course course) {
+	return courseService.addNewCourse(course);
+}
+}

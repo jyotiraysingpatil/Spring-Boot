@@ -1,0 +1,70 @@
+package com.app.Entities;
+
+import java.time.LocalDate;
+
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+import com.app.Enum.Company;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+
+@Entity
+public class Vehicle {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+private Long id;
+	
+	@NotBlank(message = "plzz add vehicle name")
+	private String name;
+	
+	@Enumerated(EnumType.STRING)
+	private Company company;
+	
+	@NotBlank(message = "plzz add vehicle number")
+	private String vNo;
+	
+	@NotBlank(message = "plzz enter vehicle type")
+	private String Vtype;
+	
+	@NotNull
+	private LocalDate date;
+	
+	@NotNull
+	private String time;
+
+	public Vehicle(Long id, @NotBlank(message = "plzz add vehicle name") String name, Company company,
+			@NotBlank(message = "plzz add vehicle number") String vNo,
+			@NotBlank(message = "plzz enter vehicle type") String vtype, @NotNull LocalDate date,
+			@NotNull String time) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.company = company;
+		this.vNo = vNo;
+		Vtype = vtype;
+		this.date = date;
+		this.time = time;
+	}
+
+	
+	
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,22 @@
+package com.stud.Entities;
+
+import java.time.LocalDate;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Course {
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+	
+private String CourseTitle;
+	
+	private LocalDate startDate;
+	
+	private LocalDate endDate;
+	
+	private float fees;
+	
+	private int minScore;
+}

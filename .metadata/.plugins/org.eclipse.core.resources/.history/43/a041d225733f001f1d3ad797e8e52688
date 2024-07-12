@@ -1,0 +1,23 @@
+package com.stud.Services;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.stud.Entities.Student;
+import com.stud.Repository.StudentRepository;
+@Service
+@Transactional
+public class StudentServiceImpl implements StudentService {
+
+	@Autowired 
+	private StudentRepository studentRepository;
+	
+
+	public Student addNewStudent(Student student) {
+		
+		return studentRepository.save(student);
+	}
+
+}

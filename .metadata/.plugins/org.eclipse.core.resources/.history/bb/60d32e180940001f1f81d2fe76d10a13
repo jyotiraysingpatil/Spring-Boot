@@ -1,0 +1,12 @@
+package com.app.Services;
+
+import com.app.Entities.Medicine;
+
+public interface MedicineService {
+Medicine addNew(Medicine medicine);
+
+
+
+
+
+}

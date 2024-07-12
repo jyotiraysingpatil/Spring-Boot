@@ -1,0 +1,10 @@
+package com.stud.Services;
+
+import com.stud.Entities.Student;
+
+public interface StudentService {
+Student addNewStudent(Student student,Long id);
+
+
+
+}

@@ -1,0 +1,52 @@
+package com.app.Services;
+
+import java.util.List;
+import java.util.Optional;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.app.Entities.Vehicle;
+import com.app.Exception.VehicleException;
+import com.app.Repository.VehicleRepository;
+
+@Service
+@Transactional
+public class VehicleServiceImpl implements VehicleService {
+	
+@Autowired
+private VehicleRepository vehicleRepository;
+
+	@Override
+	public Vehicle addNewVehicle(Vehicle vehicle) {
+		
+		return vehicleRepository.save(vehicle);
+	}
+
+	@Override
+	public Vehicle getByCompany(Long id) {
+		Optional<Vehicle>o=vehicleRepository.findById(id);
+		return o.orElseThrow(()-> new VehicleException("id not found"));
+	}
+
+	@Override
+	public Vehicle update(Vehicle vehicle) {
+		
+		return vehicleRepository.save(vehicle);
+	}
+
+	@Override
+	public List<Vehicle> getAll() {
+	
+		return vehicleRepository.findAll();
+	}
+
+	@Override
+	public void delete(Long id) {
+		
+		return vehicleRepository.deleteById(id);
+	}
+
+}

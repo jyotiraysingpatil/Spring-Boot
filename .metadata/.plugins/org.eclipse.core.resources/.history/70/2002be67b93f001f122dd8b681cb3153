@@ -1,0 +1,11 @@
+package com.app.Services;
+
+import com.app.Entities.Vehicle;
+
+public interface VehicleService {
+Vehicle addNewVehicle(Vehicle vehicle);
+
+
+
+
+}

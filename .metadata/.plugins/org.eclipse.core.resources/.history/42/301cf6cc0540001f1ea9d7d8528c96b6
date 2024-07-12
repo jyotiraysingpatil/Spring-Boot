@@ -1,0 +1,54 @@
+package com.app.Entities;
+
+
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+import com.app.Enum.Type;
+
+
+@Entity
+public class Medicine {
+
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private Long id;
+@NotBlank(message = "add name")
+private String name;
+@Enumerated(EnumType.STRING)
+private Type type;
+
+private LocalDate startDate;
+
+private LocalDate endDate;
+
+private LocalTime mfgtime;
+
+public Medicine(Long id, @NotBlank(message = "add name") String name, Type type, LocalDate startDate, LocalDate endDate,
+		LocalTime mfgtime) {
+	super();
+	this.id = id;
+	this.name = name;
+	this.type = type;
+	this.startDate = startDate;
+	this.endDate = endDate;
+	this.mfgtime = mfgtime;
+}
+
+
+
+
+
+
+
+}

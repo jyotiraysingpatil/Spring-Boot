@@ -1,0 +1,24 @@
+package com.stud.Services;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.stud.Entities.Course;
+import com.stud.Repository.CourseRepository;
+@Service
+@Transactional
+public class CourseServiceImpl implements CourseService {
+
+	@Autowired
+	private CourseRepository courseRepository;
+	
+	
+	@Override
+	public Course addNewCourse(Course course) {
+		
+		return courseRepository.save(course);
+	}
+
+}
